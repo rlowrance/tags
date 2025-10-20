@@ -31,7 +31,7 @@ The command reads the files specified, then prints to stdout a report showing ea
 
 These are the invocation options:
 - `--develop` turns on additional output that I found useful as I wrote the program.
-- '-h' and `--help` write help text to stdout
+- '-h' and `--help` write help text to stdout.
 
 ## Limitations
 
@@ -50,14 +50,14 @@ The license is the MIT license.
 
 ## Possible future work
 
-- Update the script to print the file names. Then the command would be more useful for analyzing the tags across multiple files.
+- Update the script to include the input file names in the printed report. Then the command would be more useful for analyzing the tags across multiple files.
 - Extend the kind of file analyzed to include markdown files. These have a tag syntax different from that used in Org-mode files.
 - Build a companion capability, possibly in the same script, to analyze tags in file names. That requires deciding on a convention for putting tags in file names. I use ` --  {tag} {tag}...` to embed tags in file names.
 - Convert the command to an Emacs function that runs inside of Emacs. It would run on the current buffer and create a new buffer with the analysis report.
 
 ## About me
 
-You can find me at these places:
+I'm a data scientist. You can find me at these places:
 
 - LinkedIn: https://www.linkedin.com/in/roylowrance/
 - Medium: medium.com/@roylowrance
