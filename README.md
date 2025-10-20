@@ -1,12 +1,12 @@
-# Analyze Tags in an Org-mode file
+# Analyze Tags in Org-mode Files
 
 ## Usage
 This Python command-line program reads one or more Emacs Org-mode files and prints a report on stdout saying which headlines mention which tags.
 
 The printed file is formatted as an Org-mode file. Typically I pipe it to a temporary file which I open in Emacs.
 
-My main use case for the command is around a large org-mode file I maintain. That file has most of my notes in it--it's a "one big text file" (OBTF).
-Each note begins with a header. Some of the headers have org-mode tags in them. In org-mode, a tag is sequence of characters written between colons, as in `:tag:` (which is one tag) and `:tag1:tag:` which are two tags. Org-mode expects tags to contains only alphabetic or numeric characters or the characters "@" or "_". My tags mostly reflect the topic in the node.
+My main use case for the command is around a large Org-mode file I maintain. That file has most of my notes in it--it's a "one big text file" (OBTF).
+Each note begins with a header. Some of the headers have Org-mode tags in them. In Org-mode, a tag is sequence of characters written between colons, as in `:tag:` (which is one tag) and `:tag1:tag2:` which are two tags. Org-mode expects tags to contains only alphabetic or numeric characters or the characters "@" or "_". My tags mostly reflect the topic in the note.
 
 I use this command to find misspelled tags. That works because the command prints tags in alphabetic order.
 
@@ -15,6 +15,8 @@ I also use it to find all the notes on a given topic. I use this when assembling
 ## Installation
 
 To install, clone this repo then copy the file `tags.py` to a directory that is in your path. If you use your `~/bin` directory, you can do this by running the script `install-into-home.sh~ and setting your `$PATH` in your shell's initialization script.
+
+You will probably need to edit the shebang line at the top of the script to locate your Python interpretter. (In MacOS, you can run the command `$which python3` to locate you Python command.)
 
 ## Invocation
 
@@ -29,7 +31,7 @@ The command reads the files specified, then prints to stdout a report showing ea
 
 These are the invocation options:
 - `--develop` turns on additional output that I found useful as I wrote the program.
-- `--help` writes help text to stdout
+- '-h' and `--help` write help text to stdout
 
 ## Limitations
 
