@@ -10,32 +10,29 @@ Each note begins with a header. Some of the headers have org-mode tags in them. 
 A common use case for me is to use this command to find misspelled tags. That works because the command prints tags in alphabetic order.
 
 Another use case for me is to find all the notes on a given topic. I use this when assembling research for a writing project or decidin on futher research.
+
 # Installation
 
-To install, clone this repo then copy the file `tags.py` to a directory that is in your path. If you use your `~/bin~ directory, you can do this by running the script `install-into-home.sh~.
+To install, clone this repo then copy the file `tags.py` to a directory that is in your path. If you use your `~/bin~` directory, you can do this by running the script `install-into-home.sh~ and setting your `$PATH` in your shell's initialization script.
+
 # Invocation
 
 To use the command, invoke the command with one or more filenames on the command line.
 
 Examples of invocations:
-- To analyze the tags in one Org-mode file, enter `$tags journal.org`.
-- To analyze the tags in all Org-mode files in a directory, enter `$ tags *.org`.
+- To analyze the tags in the file `journal.org`, enter `$tags journal.org`.
+- To analyze the tags in all Org-mode files in a directory, change to that directory then enter `$tags *.org`.
 - To analyze the tags from stdin, enter `$tags`.
 
-The first command reads the file `journal.org` and prints to stdout a report showing each tag and for each tag, the headlines in the file that mention that tag.
-
-The second command reads all the Org-mode files and prints one report analyze the tag usage in all of the files.
+The command reads the files specified, then prints to stdout a report showing each tag and for each tag, the headlines in the file that mention that tag.
 
 These are the invocation options:
 - `--develop` turns on additional output that I found useful as I wrote the program.
 - `--help` writes help text to stdout
 
-After the invocation options, you can add any number of files to read.
-
-
 # Limitations
 
-The printed report doesn't include the file name as that would be additional clutter in the output and I use the command for one file at a time.
+The printed report doesn't include the file name as that would be additional clutter in the output and I use the command mostly for one file at a time.
 
 # Contributing
 
@@ -53,7 +50,7 @@ The license is the MIT license.
 - Update the script to print the file names. Then the command would be more useful for analyzing the tags across multiple files.
 - Extend the kind of file analyzed to include markdown files. These have a tag syntax different from that used in Org-mode files.
 - Build a companion capability, possibly in the same script, to analyze tags in file names. That requires deciding on a convention for putting tags in file names. I use ` --  {tag} {tag}...` to embed tags in file names.
-- Convert the command to an Emacs command that runs inside of Emacs. It would run on the current buffer and create a new buffer with the analysis report.
+- Convert the command to an Emacs function that runs inside of Emacs. It would run on the current buffer and create a new buffer with the analysis report.
 
 # About me
 
