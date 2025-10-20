@@ -1,16 +1,26 @@
 Print Tags in an Org-Mode file
+# Usage
+This Python command-line program reads one or more Emacs org-mode files and prints a report on stdout saying which headlines mention which tags.
 
-The Python command line program reads one or more Emacs org-mode files and prints a report on which headlines mention which tags. The report helps to manage the tags in use.
+The printed file is formatted as an org-mode file. Typically I pipe it to a temporary file which I open in Emacs.
+
+Here are my use cases for the command are around a large org-mode file I maintain. That file has most of my notes in it--it's what others call a "one big text file" (OBTF).
+Each note begins with a header. Some of the headers have org-mode tags in them. In org-mode a tag is sequence of characters written between colons, as in `:tag:` (which is one tag) and `:tag1:tag:` which are two tags. Org-mode expects tags to contains only alphabetic or numeric characters or the characters "@" or "_". My tags mostly reflect the topic in the node.
+
+A common use case for me is to use this command to find misspelled tags. That works because the command prints tags in alphabetic order.
+
+Another use case for me is to find all the notes on a given topic. I use this when assembling research for a writing project or decidin on futher research.
+# Installation
 
 To install, clone this repo then copy the file `tags.py` to a directory that is in your path. If you use your `~/bin~ directory, you can do this by running the script `install-into-home.sh~.
-
+# Invocation
 To use the command, invoke the command with one or more filenames on the command line.
 
-Here is an example: `> tags journal.org`
+Here is an example: `$ tags journal.org`
 
 That command reads the file journal.org and prints to stdout a report showing each tag and for each tag, the headlines in the file that mention that tag.
 
-# Invocation options
+These are the invocation options:
 - `--develop` turns on additional output that I found useful as I wrote the program.
 - `--help` writes help text to stdout
 
@@ -33,3 +43,4 @@ The license is the MIT license.
 - Update the script to print the file names. Then the command would be more useful for analyzing the tags across multiple files.
 - Extend the kind of file analyzed to include markdown files. These have a tag syntax different from that used in org-mode files.
 - Build a companion capability, possibly in the same script, to analyze tags in file names. That requires deciding on a convention for putting tags in file names. I use ` --  {tag} {tag}...` to embed tags in file names.
+- Convert the command to an Emacs command that runs inside of Emacs. It would run on the current buffer and create a new buffer with the analysis report.
