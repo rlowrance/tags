@@ -44,7 +44,7 @@ Here are some examples of invocations:
 
 - To analyze the tags in the file `journal.org`, enter `$tags
   journal.org`. Because I typically pipe the output, I enter `$tags
-  journal.org > tmp.org' then open the `tmp.org` file in Emacs.
+  journal.org > tmp.org` then open the `tmp.org` file in Emacs.
 
 - To analyze the tags in all Org-mode files in a directory, change to
   that directory then enter `$tags *.org`. You might want to do this
