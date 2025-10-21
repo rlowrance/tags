@@ -48,7 +48,7 @@ Here are some examples of invocations:
 
 - To analyze the tags in all Org-mode files in a directory, change to
   that directory then enter `$tags *.org`. You might want to do this
-  if you maintain all your notes in separate file in a directory.
+  if you maintain a directory containing many of your notes.
 
 - To analyze the tags from stdin, enter `$tags`.
 
