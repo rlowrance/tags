@@ -11,7 +11,7 @@ to a temporary file which I open in Emacs.
 
 My main use case for the command is around a large Org-mode file I
 maintain. That file has most of my notes in it--it's a "one big text
-file" (OBTF).  Each note begins with a header. Some of the headers
+file" (OBTF).  Each note begins with an Org-mode header, which is a line starting with a "*". Some of the headers
 have Org-mode tags in them. In Org-mode, a tag is sequence of
 characters written between colons, as in `:tag:` (which is one tag)
 and `:tag1:tag2:` which are two tags. Org-mode expects tags to
@@ -44,7 +44,7 @@ Here are some examples of invocations:
 
 - To analyze the tags in the file `journal.org`, enter `$tags
   journal.org`. Because I typically pipe the output, I enter `$tags
-  journal.org > tmp.org$ then open the `tmp.org` file in Emacs.
+  journal.org > tmp.org' then open the `tmp.org` file in Emacs.
 
 - To analyze the tags in all Org-mode files in a directory, change to
   that directory then enter `$tags *.org`. You might want to do this
