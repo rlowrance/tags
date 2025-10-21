@@ -29,20 +29,27 @@ research.
 
 To install, clone this repo then copy the file `tags.py` to a
 directory that is in your path. If you use your `~/bin` directory, you
-can do this by running the script `install-into-home.sh` and setting
+can do this by running the script `install-into-home-bin.sh` and setting
 your `$PATH` in your shell's initialization script.
 
 You will probably need to edit the shebang line at the top of the
-script to locate your Python interpretter. (In MacOS, you can run the
-command `$which python3` to locate your Python command.)
+script to locate your Python interpretter. In MacOS, you can run the
+command `$which python3` to locate your Python command.
 
 ## Invocation
 
 To use the command, invoke the command with one or more filenames on the command line.
 
 Here are some examples of invocations:
-- To analyze the tags in the file `journal.org`, enter `$tags journal.org`.
-- To analyze the tags in all Org-mode files in a directory, change to that directory then enter `$tags *.org`.
+
+- To analyze the tags in the file `journal.org`, enter `$tags
+  journal.org`. Because I typically pipe the output, I enter `$tags
+  journal.org > tmp.org$ then open the `tmp.org` file in Emacs.
+
+- To analyze the tags in all Org-mode files in a directory, change to
+  that directory then enter `$tags *.org`. You might want to do this
+  if you maintain all your notes in separate file in a directory.
+
 - To analyze the tags from stdin, enter `$tags`.
 
 The command reads the files specified, then prints to stdout a report
@@ -64,7 +71,7 @@ The code uses these built-in Python modules:
 - `collections` to create a `namedtuple` internal data type `TagUsage`.
 - `fileinput` to read the input files specified on the command line or to read stdin, if no files are specified on the command line.
 
-I don't follow typical guidelines for formatting source code, but you
+I don't follow typical guidelines for formatting Python source code, but you
 are welcome to reformat the code using your favorite style.
 
 The license is the MIT license.
@@ -95,4 +102,4 @@ I'm a data scientist. You can find me at these places:
 
 - Medium: medium.com/@roylowrance
 
-- Blot: https://www.roylowrance.com
+- Blog: https://www.roylowrance.com
